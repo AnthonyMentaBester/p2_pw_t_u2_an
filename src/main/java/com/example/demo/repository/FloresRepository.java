@@ -13,6 +13,9 @@ public interface FloresRepository {
 	
 	//Criteria 
 	public List<Flores> seleccionarFloresDinamicoCriteriaQuery(String nombre);
+	//Actulizar y borrar
+	public int eliminarPorNombre(String nombre);
+	public int actualizarPorEstado(String estado);
 	
 
 }

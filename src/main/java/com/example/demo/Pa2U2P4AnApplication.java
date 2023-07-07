@@ -28,18 +28,21 @@ public class Pa2U2P4AnApplication implements CommandLineRunner {
 	public void run(String... args) throws Exception {
 		// TODO Auto-generated method stub
 		Flores fl = new Flores();
-		fl.setNombre("rosas");
-		fl.setColor("amarillo");
+		fl.setNombre("acasias");
+		fl.setColor("verde");
 		fl.setPetalos(new Double(7));
 		fl.setEstado("marchitas");
 		fl.setTipo("Angiospermas");
 		fl.setCosto(new BigDecimal(24));
 		fl.setFechaIngreso(LocalDate.of(2023, 05, 4));
 		fl.setFechaSalida(LocalDate.of(2023, 8, 10));
-		fl.setCantidad(new BigDecimal(7));
-		//this.floresService.agregar(fl);
+		fl.setCantidad(new BigDecimal(32));
+		this.floresService.agregar(fl);
 		
 		System.out.println(this.floresService.seleccionarFloresDinamicoCriteriaQuery("acasias"));
+		
+		System.out.println(this.floresService.actualizarPorEstado("marchitas"));
+		System.out.println(this.floresService.borrarPorNombre("acasias"));
 		
         
         

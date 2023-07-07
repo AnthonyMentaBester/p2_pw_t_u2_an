@@ -44,4 +44,16 @@ public class FloresServiceImpl implements FloresService{
 		return this.floresRepository.seleccionarFloresDinamicoCriteriaQuery(nombre);
 	}
 
+	@Override
+	public int borrarPorNombre(String nombre) {
+		// TODO Auto-generated method stub
+		return this.floresRepository.eliminarPorNombre(nombre);
+	}
+
+	@Override
+	public int actualizarPorEstado(String estado) {
+		// TODO Auto-generated method stub
+		return this.floresRepository.actualizarPorEstado(estado);
+	}
+
 }

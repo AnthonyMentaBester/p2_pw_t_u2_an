@@ -82,4 +82,24 @@ public class FloresRepositoryImpl implements FloresRepository {
 
 	}
 
+	@Override
+	public int eliminarPorNombre(String nombre) {
+		// TODO Auto-generated method stub
+		TypedQuery<Flores> query = entityManager.createQuery("DELETE FROM Flores f WHERE f.nombre = :nombre AND f.color = :color AND f.estado = :estado", Flores.class);
+	    query.setParameter("nombre", nombre);
+	    query.setParameter("color", "verde");
+	    query.setParameter("estado", "marchitas");
+	    return query.executeUpdate();
+	}
+
+	@Override
+	public int actualizarPorEstado(String estado) {
+		// TODO Auto-generated method stub
+		TypedQuery<Flores> query = entityManager.createQuery("UPDATE Flores f SET f.cantidad = f.cantidad * 2 WHERE f.estado = :estado", Flores.class);
+	    query.setParameter("estado", estado);
+	    
+
+	    return query.executeUpdate();
+	}
+
 }

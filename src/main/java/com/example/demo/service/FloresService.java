@@ -12,5 +12,9 @@ public interface FloresService {
 	
 	//Criteria 
 	public List<Flores> seleccionarFloresDinamicoCriteriaQuery(String nombre);
+	
+	//actualizar y borrar
+	public int borrarPorNombre(String nombre);
+	public int actualizarPorEstado(String estado);
 
 }
