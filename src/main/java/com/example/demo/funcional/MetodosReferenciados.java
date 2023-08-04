@@ -7,32 +7,46 @@ public class MetodosReferenciados {
 	private static final Logger LOG = LoggerFactory.getLogger(MetodosReferenciados .class);
 
 
-	public Integer getID() {
+	public static Integer getID() {
 	
 		return 8;
 	}
-	public void aceptar(String arg) {
+	public static void aceptar(String arg) {
 		String cadena = "Anthony";
 		LOG.info(cadena+ " " + arg);
 	}
 	
-	public boolean comparar(String arg) {
-		String caracter = "#";
-		if(caracter.contains(caracter)) {
+	public static boolean comparar(String arg) {
+		String caracter = "#hola";
+		LOG.info(caracter+ " " + arg);
+		if(caracter.contains("#")) {
 			return true;
 		}
 			else {
 				return false;
-				}		
+				}
 	}
-	public String transformar(Integer numero) {
-		String cadena  = numero.toString().concat("el valor fue tranformado");
+	
+	public static String getIdHO() {
+	
+		LOG.info("Metodos referenciados y HO");
+		return "Anthonyn narvaez";
+	}
+	
+	public static String aplicar(Integer arg) {
+		// TODO Auto-generated method stub
+		 Integer num = 6+arg;
+		String cadena= num.toString().concat(" el 6 fue transformado a texto");
+		LOG.info(cadena+ " " + num);
 		return cadena;
 	}
 	
-	public Integer sumar(Integer numero) {
-		Integer suma  = numero+9;
-		return suma;
+	public static Integer producto(Integer arg) {
+		// TODO Auto-generated method stub
+		Integer num = 66 * arg;
+		Integer mult = num *212;
+		LOG.info(mult+ " * " + arg);
+		return mult;
 	}
 	
 }
