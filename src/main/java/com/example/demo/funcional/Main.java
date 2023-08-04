@@ -189,9 +189,9 @@ public class Main {
 		LOG.info(" numero multiplcado por labdas: ");
 		highOrder.mantener(numero -> 
 		numero + (numero * 2),666);
-		
+		//metodos referenciados 
 		highOrder.mantener(MetodosReferenciados::producto, 112);
-		/*
+	
 
 
 		// programacion funcional java o interfaces funcionales
@@ -225,12 +225,43 @@ public class Main {
 			Integer num = 10;
 			num = numero + num;
 			return num;
-
 		});
-
 		listaCambiada2.forEach(cadena -> LOG.info(cadena.toString()));
 		
-		*/
+	
+		//METODOS HIGH ORDER JAVA CON METODOS REFERENCIADOS 
+		// 1.- SUPPLIER
+		LOG.info("metodo referenciados supplier");
+		Stream<String> listasupplier = Stream.generate(MetodosReferenciadosJava::cedula).limit(5);
+		listasupplier.forEach(LOG::info);
+		
+		// 2.- CONSUMER
+		LOG.info("metodo referenciados consumer");
+		List<Integer> listaConsumer = Arrays.asList(1,2,3,4,5,6);
+		listaConsumer.forEach(numero -> LOG.info("consumer: " + numero));
+		
+		// 3.- PREDICATE
+		LOG.info("metodo referenciados predicate");
+		List<Integer> listaPredicate = Arrays.asList(56,3,8,4,34,4,4,4,0);
+		Stream<Integer> listaPreFinal = listaPredicate.stream().filter(MetodosReferenciadosJava::comparar);
+		listaPreFinal.forEach(numero -> LOG.info("predicate: " + numero));
+		
+
+		// 4.- FUNCTION
+		LOG.info("metodo referenciados function");
+		List<Integer> listaFunction = Arrays.asList(2,2,2,2,2,2,2,2,2,2);
+		Stream<String> listaFunctionCambiada = listaFunction.stream().map(MetodosReferenciadosJava::convertir);
+		listaFunctionCambiada.forEach(LOG::info);
+		
+
+		//UNARY OPERATOR
+		LOG.info("metodo referenciados operator");
+		List<Integer> listaUnaryOperator = Arrays.asList(87,4,5,8,3,11,9,5,4,0);
+		Stream<Integer> listaUnaryOperatorCambiada = listaUnaryOperator.stream().map(MetodosReferenciadosJava::multiplicar);
+		listaUnaryOperatorCambiada.forEach(cadena -> LOG.info(cadena.toString()));
+
+
+
 
 	}
 
